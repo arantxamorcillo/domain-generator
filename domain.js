@@ -1,20 +1,29 @@
-let pronoun = ['the','our','me','your'];
-let adj = ['great', 'big','pretty', 'small', 'tiny' ];
-let noun = ['jogger','racoon','duck', 'house', 'doll'];
-let ext = ['.es','.com','.uk','.us']
+let pronoun = ['the','our','last','first'];
+let adj = ['great', 'big','of','call' ];
+let noun = ['jogger','me','racoon','us'];
+let ext = ['com', 'us','uk','es','me']
 
-let randomGenerator = function(parts){
-    let randomIndex = Math.floor(Math.random()*parts.length);
-    return parts[randomIndex];
-}
-
-
-const domainGenerator = function(){
-    var domain = "";
-    for (var i in arguments) {
-        randomGenerator (arguments[i]);
-        domain += randomGenerator(arguments[i]);
+function domainGenerator (part1, part2, part3, part4){
+   
+    for (let i=0; i<part1.length; i++){
+        
+        for (let j=0; j<part2.length; j++){
+            
+            for (let k=0; k<part3.length; k++){
+                
+                for (let l=0; l<part4.length; l++){
+                    if ( part3[k]==part4[l]){
+                        domain = part1[i] + part2[j] + "." + part4[l]
+                        console.log ("DOMAIN HACK " + domain)
+                    }
+                    else{
+                        domain =part1[i] + part2[j] + part3[k] + "." + part4[l]
+                        console.log(domain)
+                    }
+                }
+            }
+        }    
     }
-    return (domain)
 }
-console.log (domainGenerator(pronoun, adj, noun, ext))
+
+domainGenerator(pronoun, adj, noun,ext)
