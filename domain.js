@@ -12,8 +12,8 @@ function domainGenerator (part1, part2, part3, part4){
             for (let k=0; k<part3.length; k++){
                 
                 for (let l=0; l<part4.length; l++){
-                    if ( part3[k]==part4[l]){
-                        domain = part1[i] + part2[j] + "." + part4[l]
+                    if ( part4.includes(part3[k])){
+                        domain = part1[i] + part2[j] + "." + part3[k]
                         console.log ("DOMAIN HACK " + domain)
                     }
                     else{
@@ -25,5 +25,4 @@ function domainGenerator (part1, part2, part3, part4){
         }    
     }
 }
-
 domainGenerator(pronoun, adj, noun,ext)
